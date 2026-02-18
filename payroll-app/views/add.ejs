@@ -1,0 +1,98 @@
+<head>
+<title>Add Employee</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Employee Payroll Form</title>
+</head>
+<body>
+
+<h2>Employee Payroll Form</h2>
+
+<form action="/add" method="POST">
+
+    <!-- Name -->
+    <label>Name:</label>
+    <input type="text" name="name">
+    <br><br>
+   <label>Profile Image:</label> 
+<div class="profile-images">
+
+<label>
+<input type="radio" name="profile" value="1">
+<img src="https://randomuser.me/api/portraits/women/44.jpg">
+</label>
+
+<label>
+<input type="radio" name="profile" value="2">
+<img src="https://randomuser.me/api/portraits/men/32.jpg">
+</label>
+
+<label>
+<input type="radio" name="profile" value="3">
+<img src="https://randomuser.me/api/portraits/women/68.jpg">
+</label>
+
+<label>
+<input type="radio" name="profile" value="4">
+<img src="https://randomuser.me/api/portraits/men/75.jpg">
+</label>
+
+</div>
+
+
+    <label>Gender:</label>
+
+<div class="gender">
+<input type="radio" name="gender"> Male
+<input type="radio" name="gender"> Female
+</div>
+
+
+<label>Department:</label>
+
+<div class="department">
+<input type="checkbox"> HR
+<input type="checkbox"> Sales
+<input type="checkbox"> Finance
+<input type="checkbox"> Engineer
+</div>
+
+    <!-- Salary -->
+    <label>Salary:</label>
+    <input type="number" name="salary">
+    <br><br>
+
+    <!-- Start Date -->
+    <label>Start Date:</label>
+    <input type="date" name="startDate">
+    <br><br>
+
+   
+
+
+
+
+
+
+    <!-- Notes -->
+    <label>Notes:</label>
+    <textarea name="notes"></textarea>
+    <br><br>
+
+    <!-- Buttons -->
+    <button type="submit">Submit</button>
+    <button type="reset">Reset</button>
+
+</form>
+
+<br>
+
+<a href="/">Back to Dashboard</a>
+
+</body>
+</html>
