@@ -1,98 +1,140 @@
+<!DOCTYPE html>
+<html>
 <head>
 <title>Add Employee</title>
 <link rel="stylesheet" href="/style.css">
 </head>
 
-
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Employee Payroll Form</title>
-</head>
 <body>
 
-<h2>Employee Payroll Form</h2>
+<div class="header">
+<h2 class="logo">EMPLOYEE PAYROLL</h2>
+</div>
+
+
+<div class="form-container">
+
+<h2 class="form-title">Employee Payroll Form</h2>
 
 <form action="/add" method="POST">
 
-    <!-- Name -->
-    <label>Name:</label>
-    <input type="text" name="name">
-    <br><br>
-   <label>Profile Image:</label> 
+
+<label>Name</label>
+<input type="text" name="name" required>
+
+
+
+<label>Profile image</label>
+
 <div class="profile-images">
 
 <label>
-<input type="radio" name="profile" value="1">
+<input type="radio" name="profileImage" value="https://randomuser.me/api/portraits/women/44.jpg">
 <img src="https://randomuser.me/api/portraits/women/44.jpg">
 </label>
 
 <label>
-<input type="radio" name="profile" value="2">
+<input type="radio" name="profileImage" value="https://randomuser.me/api/portraits/men/32.jpg">
 <img src="https://randomuser.me/api/portraits/men/32.jpg">
 </label>
 
 <label>
-<input type="radio" name="profile" value="3">
+<input type="radio" name="profileImage" value="https://randomuser.me/api/portraits/women/68.jpg">
 <img src="https://randomuser.me/api/portraits/women/68.jpg">
 </label>
 
 <label>
-<input type="radio" name="profile" value="4">
+<input type="radio" name="profileImage" value="https://randomuser.me/api/portraits/men/75.jpg">
 <img src="https://randomuser.me/api/portraits/men/75.jpg">
 </label>
 
 </div>
 
 
-    <label>Gender:</label>
 
-<div class="gender">
-<input type="radio" name="gender"> Male
-<input type="radio" name="gender"> Female
+<label>Gender</label>
+
+<div class="gender-group">
+
+<label>
+<input type="radio" name="gender" value="Male"> Male
+</label>
+
+<label>
+<input type="radio" name="gender" value="Female"> Female
+</label>
+
 </div>
 
 
-<label>Department:</label>
 
-<div class="department">
-<input type="checkbox"> HR
-<input type="checkbox"> Sales
-<input type="checkbox"> Finance
-<input type="checkbox"> Engineer
+<label>Department</label>
+
+<div class="department-group">
+
+<label>
+<input type="checkbox" name="department" value="HR"> HR
+</label>
+
+<label>
+<input type="checkbox" name="department" value="Sales"> Sales
+</label>
+
+<label>
+<input type="checkbox" name="department" value="Finance"> Finance
+</label>
+
+<label>
+<input type="checkbox" name="department" value="Engineer"> Engineer
+</label>
+
 </div>
 
-    <!-- Salary -->
-    <label>Salary:</label>
-    <input type="number" name="salary">
-    <br><br>
-
-    <!-- Start Date -->
-    <label>Start Date:</label>
-    <input type="date" name="startDate">
-    <br><br>
-
-   
 
 
 
+<label>Salary</label>
+
+<select name="salary">
+
+<option>10000</option>
+<option>20000</option>
+<option>30000</option>
+<option>40000</option>
+
+</select>
 
 
 
-    <!-- Notes -->
-    <label>Notes:</label>
-    <textarea name="notes"></textarea>
-    <br><br>
 
-    <!-- Buttons -->
-    <button type="submit">Submit</button>
-    <button type="reset">Reset</button>
+<label>Start Date</label>
+
+<input type="date" name="startDate">
+
+
+
+
+<label>Notes</label>
+
+<textarea name="notes"></textarea>
+
+
+
+
+<div class="btn-group">
+
+<button type="submit">Submit</button>
+
+<button type="reset">Reset</button>
+
+</div>
+
+
 
 </form>
 
-<br>
+</div>
 
-<a href="/">Back to Dashboard</a>
 
 </body>
 </html>
