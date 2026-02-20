@@ -1,72 +1,99 @@
-
 const express = require('express');
-const fs = require('fs');
+
+const fileHandler = require('./modules/filehandler');
 
 const app = express();
 
 
 app.use(express.urlencoded({ extended: true }));
-app.set('view engine', 'ejs');
+
 app.use(express.static('public'));
 
+app.set('view engine', 'ejs');
 
-// read data fn
-function readEmployees() {
-    let data = fs.readFileSync('employees.json');
-    return JSON.parse(data);
-}
 
-// write data fn
-function writeEmployees(data) {
-    fs.writeFileSync('employees.json', JSON.stringify(data, null, 2));
-}
+
 
 // Dashboard
 app.get('/', (req, res) => {
 
-    let employees = readEmployees();
+    let employees = fileHandler.read();
 
-    res.render('index', { employees: employees });
+    res.render('index', { employees });
 
 });
 
-// Show the Add Form
+
+
+
+// Show Add Form
 app.get('/add', (req, res) => {
+
     res.render('add');
+
 });
 
-// to add  Employee
+
+
+
+// Add Employee
 app.post('/add', (req, res) => {
 
-    let employees = readEmployees();
+    let employees = fileHandler.read();
+
 
     let newEmployee = {
+
         id: Date.now(),
+
         name: req.body.name,
+
+        profileImage: req.body.profileImage,
+
+        gender: req.body.gender,
+
         department: req.body.department,
-        salary: Number(req.body.salary)
+
+        salary: req.body.salary,
+
+        startDate: req.body.startDate
+
     };
+
 
     employees.push(newEmployee);
 
-    writeEmployees(employees);
+
+    fileHandler.write(employees);
+
 
     res.redirect('/');
+
 });
 
-// to Delete Employee
+
+
+
+// Delete
 app.get('/delete/:id', (req, res) => {
 
-    let employees = readEmployees();
+    let employees = fileHandler.read();
+
 
     let newList = employees.filter(emp => emp.id != req.params.id);
 
-    writeEmployees(newList);
+
+    fileHandler.write(newList);
+
 
     res.redirect('/');
+
 });
 
+
+
 app.listen(3000, () => {
-    console.log("Server running on http://localhost:3000");
+
+console.log("Server running");
+
 });
- 
