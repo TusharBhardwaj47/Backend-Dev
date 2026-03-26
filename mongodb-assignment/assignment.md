@@ -29,9 +29,11 @@ Mongoose provides several advantages:
 - Returns only update status (not the document).
 - Faster and lightweight.
 
+---
+
 ### Example
 
-```js
+js
 // findOneAndUpdate
 User.findOneAndUpdate(
   { name: "Tushar" },
@@ -43,7 +45,9 @@ User.findOneAndUpdate(
 User.updateOne(
   { name: "Tushar" },
   { age: 20 }
-);
+);```
+
+
 
 ## 3. Purpose of Middleware in Mongoose.
 
@@ -69,7 +73,8 @@ schema.pre("save", function(next) {
   next();
 });
 
-----
+---
+
 
 ## 4. Implement Pagination in mongoose
 
