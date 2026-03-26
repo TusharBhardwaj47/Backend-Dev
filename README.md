@@ -1,1 +1,0 @@
-# bridgelab-trainee
