@@ -8,8 +8,8 @@ createBook("B-01", "book-1", "author-1", "200");
 createBook("B-02", "book-2", "author-2", "250");
 createBook("B-03", "book-3", "author-3", "500");
 
-createMember("M-01", "Adarsh", "Gold");
-createMember("M-02", "Reshu", "Normal");
+createMember("M-01", "Tushar", "Gold");
+createMember("M-02", "Vaibhav", "Normal");
 
 createBorrowRecord("M-01", "B-01"); 
 createBorrowRecord("M-01", "B-03");
