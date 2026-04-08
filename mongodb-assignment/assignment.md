@@ -33,7 +33,7 @@ Mongoose provides several advantages:
 
 ### Example
 
-js
+ js
 // findOneAndUpdate
 User.findOneAndUpdate(
   { name: "Tushar" },
